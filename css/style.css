@@ -1,0 +1,26 @@
+#Location h2
+{
+    margin-left: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+
+#Location li
+{
+    list-style: disc;
+    margin-left: 70px;
+    padding-top: 4px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#Location ul 
+{
+    margin-bottom: 20px;
+}
