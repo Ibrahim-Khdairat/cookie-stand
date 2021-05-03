@@ -24,3 +24,21 @@
 {
     margin-bottom: 20px;
 }
+
+
+#Tables table, td ,th
+{
+border :1px black solid ;
+}
+#Tables table 
+{
+    width: 700px;
+    border-collapse: collapse;
+}
+
+#Tables td
+{
+    text-align: center;
+    height: 20px;
+}
+
