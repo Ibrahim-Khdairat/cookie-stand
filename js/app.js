@@ -10,7 +10,7 @@ let Seattle = {
     cxPerhour:0,
     total:0,
 
-    workHours: ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 pm: ', '1 pm: ', '2 pm: ', '3 pm: ', '4 pm: ', '5 pm: ', '6 pm: ', '7 pm: ', '8 pm: '],
+    workHours: ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 pm: ', '1 pm: ', '2 pm: ', '3 pm: ', '4 pm: ', '5 pm: ', '6 pm: ', '7 pm: '],
 
     getNumber: function (min, max) {
         min = Math.ceil(min);
@@ -21,7 +21,7 @@ let Seattle = {
 
     },
 
-    render: function () {
+   render: function () {
         let divEl = document.getElementById('Location');
 
         let h2El = document.createElement('h2');
@@ -37,8 +37,9 @@ let Seattle = {
         for (let i = 0; i < this.workHours.length; i++) {
             let liEl = document.createElement('li');
             liEl.textContent = `${this.workHours[i]}  ${this.getNumber(this.min,this.max)} cookies`;
-            this.total+=this.getNumber(this.min,this.max);
             ulEl.appendChild(liEl);
+
+            this.total+=this.getNumber(this.min,this.max);
         }
         let liEl = document.createElement('li');
         liEl.textContent = `Total ${this.total} cookies`;
@@ -47,7 +48,6 @@ let Seattle = {
     }
    
 }
-
 
 
 
@@ -64,7 +64,7 @@ let Tokyo = {
     total:0,
     cxPerhour:0,
 
-    workHours: ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 pm: ', '1 pm: ', '2 pm: ', '3 pm: ', '4 pm: ', '5 pm: ', '6 pm: ', '7 pm: ', '8 pm: '],
+    workHours: ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 pm: ', '1 pm: ', '2 pm: ', '3 pm: ', '4 pm: ', '5 pm: ', '6 pm: ', '7 pm: '],
 
     getNumber: function (min, max) {
         min = Math.ceil(min);
@@ -115,7 +115,7 @@ let Dubai = {
     num:0,
     cxPerhour:0,
 
-    workHours: ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 pm: ', '1 pm: ', '2 pm: ', '3 pm: ', '4 pm: ', '5 pm: ', '6 pm: ', '7 pm: ', '8 pm: '],
+    workHours: ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 pm: ', '1 pm: ', '2 pm: ', '3 pm: ', '4 pm: ', '5 pm: ', '6 pm: ', '7 pm: '],
 
     getNumber: function (min, max) {
         min = Math.ceil(min);
@@ -169,7 +169,7 @@ let Paris = {
     num:0,
     cxPerhour:0,
 
-    workHours: ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 pm: ', '1 pm: ', '2 pm: ', '3 pm: ', '4 pm: ', '5 pm: ', '6 pm: ', '7 pm: ', '8 pm: '],
+    workHours: ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 pm: ', '1 pm: ', '2 pm: ', '3 pm: ', '4 pm: ', '5 pm: ', '6 pm: ', '7 pm: '],
 
     getNumber: function (min, max) {
         min = Math.ceil(min);
@@ -227,7 +227,7 @@ let Lima = {
     num:0,
     cxPerhour:0,
 
-    workHours: ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 pm: ', '1 pm: ', '2 pm: ', '3 pm: ', '4 pm: ', '5 pm: ', '6 pm: ', '7 pm: ', '8 pm: '],
+    workHours: ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 pm: ', '1 pm: ', '2 pm: ', '3 pm: ', '4 pm: ', '5 pm: ', '6 pm: ', '7 pm: '],
 
     getNumber: function (min, max) {
         min = Math.ceil(min);
@@ -275,24 +275,19 @@ let Lima = {
 
 
 
-Seattle.getNumber(Seattle.min,Seattle.max);
 Seattle.render();
 
 
 
-Tokyo.getNumber(Tokyo.min,Tokyo.max);
 Tokyo.render();
 
 
 
-Dubai.getNumber(Dubai.min,Dubai.max);
 Dubai.render();
 
 
-Paris.getNumber(Paris.min,Paris.max);
 Paris.render();
 
 
 
-Lima.getNumber(Lima.min,Lima.max);
 Lima.render();
