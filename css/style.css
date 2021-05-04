@@ -32,13 +32,29 @@ border :1px black solid ;
 }
 #Tables table 
 {
-    width: 700px;
+    width: 1000px;
     border-collapse: collapse;
+  
+}
+#Tables
+{
+    margin-top: 50px;
+    margin-left: 50px;
 }
 
 #Tables td
 {
     text-align: center;
-    height: 20px;
+    height: 16px;
+    width: 100px;
 }
 
+th
+{
+    width: 100px;
+}
+td
+{
+    width: 100px;
+
+}
