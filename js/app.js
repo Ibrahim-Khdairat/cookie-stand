@@ -2,20 +2,23 @@
 
 let Cities = [];
 let workHours = ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 Pm: ', '1 Pm: ', '2 Pm: ', '3 Pm: ', '4 Pm: ', '5 Pm: ', '6 Pm: ', '7 Pm: '];
-let totalPerhour = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-let Sum=0;
+let totalPerhour = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+let Sum = 0;
 let totalCokkie = 0;
 function City(location, min, max, avg) {
     this.location = location;
     this.min = min;
     this.max = max;
     this.avg = avg;
-    this.sumTotal=0;
+    this.sumTotal = 0;
     this.cxPerhour = [];
     this.cookiesPerhour = [];
     this.total = 0;
     Cities.push(this)
 }
+
+
+
 
 City.prototype.randomCxnum = function (min, max) {
 
@@ -26,12 +29,17 @@ City.prototype.randomCxnum = function (min, max) {
 
 }
 
+
+
+
 City.prototype.salesPerhour = function () {
     for (let c = 0; c < workHours.length; c++) {
         this.cookiesPerhour.push(Math.ceil(this.cxPerhour[c] * this.avg));
         this.total += this.cookiesPerhour[c];
     }
 }
+
+
 
 
 
@@ -48,8 +56,7 @@ function renderTableHeader() {
     let th1 = document.createElement('th');
     tr1.appendChild(th1);
     th1.textContent = ' Working Hours  ';
-    // let td1=document.createElement('td');
-    // th1.appendChild(td1);
+
 
 
     for (let i = 0; i < workHours.length; i++) {
@@ -61,6 +68,8 @@ function renderTableHeader() {
     tr1.appendChild(thTotal);
     thTotal.textContent = ' Total ';
 }
+
+
 
 
 
@@ -86,14 +95,13 @@ City.prototype.render = function () {
         td2.textContent = this.cookiesPerhour[i];
 
 
-        
+
         totalPerhour[i] += this.cookiesPerhour[i];
 
 
     }
-    for(let s=0;s<this.cookiesPerhour.length;s++)
-    {
-        this.sumTotal+=this.cookiesPerhour[s];
+    for (let s = 0; s < this.cookiesPerhour.length; s++) {
+        this.sumTotal += this.cookiesPerhour[s];
 
     }
 
@@ -138,6 +146,11 @@ City.prototype.render = function () {
 
 
 
+
+
+
+
+
 function renderTableTotal() {
     let divEl = document.getElementById('Tables');
 
@@ -158,14 +171,15 @@ function renderTableTotal() {
         tr1.appendChild(tdTotalPerhour);
         tdTotalPerhour.textContent = totalPerhour[i];
     }
-let tdSumofTotal=document.createElement('td');
-for(let s=0;s<totalPerhour[s];s++)
-{
-    Sum+=totalPerhour[s];
-}
-tr1.appendChild(tdSumofTotal);
+    let tdSumofTotal = document.createElement('td');
+    for (let s = 0; s < totalPerhour[s]; s++) {
+        Sum += totalPerhour[s];
+    }
+    tr1.appendChild(tdSumofTotal);
 
-tdSumofTotal.textContent=Sum;
+    tdSumofTotal.textContent = Sum;
+
+
 }
 
 
