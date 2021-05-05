@@ -26,18 +26,68 @@
 } */
 
 
+#mainH3
+{
+   margin: 40px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+}
+#hoursOpen
+{
+    margin: 40px;
+
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+}
+#mainLink
+{
+    margin-top: 20px;
+    text-decoration: none;
+  
+    font-size: xx-large;
+    background-color: black;
+    color: whitesmoke;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    padding-left:60px ;
+    padding-top: 25px;
+}
+#mainLink:hover
+{
+    background-color: cadetblue;
+    color: black;
+}
 
 #main a
 {
    text-decoration: none;
-  
+
+   color: whitesmoke;
+
 font-size: xx-large;
-color: black;
+background-color: black;
 display: block;
 margin-left: auto;
 margin-right: auto;
 width: 200px;
+height: 60px;
+border-radius: 20px;
+padding-left:60px ;
+padding-top: 25px;
 }
+#main a:hover
+{
+    background-color: cadetblue;
+    color: black;
+}
+
 
 #main img
 {
@@ -63,8 +113,10 @@ border :1px black solid ;
 }
 #Tables
 {
+    display: block;
     margin-top: 50px;
-    margin-left: 50px;
+     margin-left: 280px;
+  
 }
 
 #Tables td
