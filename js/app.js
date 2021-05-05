@@ -41,14 +41,13 @@ City.prototype.salesPerhour = function () {
 
 
 
-
+let divEl = document.getElementById('Tables');
+let table = document.createElement('table');
+divEl.appendChild(table);
 
 
 function renderTableHeader() {
-    let divEl = document.getElementById('Tables');
 
-    let table = document.createElement('table');
-    divEl.appendChild(table);
 
     let tr1 = document.createElement('tr');
     table.appendChild(tr1);
@@ -78,10 +77,7 @@ function renderTableHeader() {
 City.prototype.render = function () {
 
 
-    let divEl = document.getElementById('Tables');
 
-    let table = document.createElement('table');
-    divEl.appendChild(table);
 
     let tr2 = document.createElement('tr');
     table.appendChild(tr2);
@@ -97,50 +93,19 @@ City.prototype.render = function () {
 
 
         totalPerhour[i] += this.cookiesPerhour[i];
+        this.sumTotal += this.cookiesPerhour[i];
 
 
     }
-    for (let s = 0; s < this.cookiesPerhour.length; s++) {
-        this.sumTotal += this.cookiesPerhour[s];
+ 
 
-    }
-
-    let tdTotal = document.createElement('td');
-    tr2.appendChild(tdTotal);
-    tdTotal.textContent = this.sumTotal;
+    let thTotal = document.createElement('th');
+    tr2.appendChild(thTotal);
+    thTotal.textContent = this.sumTotal;
 
 
 
 
-
-
-
-
-
-
-
-
-    // let divEl = document.getElementById('Location');
-
-    // let h2El = document.createElement('h2');
-    // h2El.textContent = this.location;
-    // divEl.appendChild(h2El);
-
-    // let ulEl = document.createElement('ul');
-    // divEl.appendChild(ulEl);
-
-
-
-
-    // for (let i = 0; i < this.workHours.length; i++) {
-    //     let liEl = document.createElement('li');
-    //     liEl.textContent = `${this.workHours[i]}  ${this.cookiesPerhour[i]} cookies`;
-    //     ulEl.appendChild(liEl);
-
-    // }
-    // let liEl = document.createElement('li');
-    // liEl.textContent = `Total ${this.total} cookies`;
-    // ulEl.appendChild(liEl);
 
 }
 
@@ -152,10 +117,7 @@ City.prototype.render = function () {
 
 
 function renderTableTotal() {
-    let divEl = document.getElementById('Tables');
-
-    let table = document.createElement('table');
-    divEl.appendChild(table);
+  
 
     let tr1 = document.createElement('tr');
     table.appendChild(tr1);
@@ -171,13 +133,13 @@ function renderTableTotal() {
         tr1.appendChild(tdTotalPerhour);
         tdTotalPerhour.textContent = totalPerhour[i];
     }
-    let tdSumofTotal = document.createElement('td');
+    let thSumofTotal = document.createElement('th');
     for (let s = 0; s < totalPerhour[s]; s++) {
         Sum += totalPerhour[s];
     }
-    tr1.appendChild(tdSumofTotal);
+    tr1.appendChild(thSumofTotal);
 
-    tdSumofTotal.textContent = Sum;
+    thSumofTotal.textContent = Sum;
 
 
 }
@@ -212,6 +174,13 @@ Lima.salesPerhour();
 Lima.render();
 
 renderTableTotal();
+
+
+
+
+
+
+
 
 // let Seattle = {
 
