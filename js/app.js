@@ -159,7 +159,9 @@ function AddNewCity(event)
 
 let newCityName= event.target.cityName.value;
 let minCxs= event.target.minCx.value;
+minCxs=Math.floor(minCxs);
 let maxCxs= event.target.maxCx.value;
+maxCxs=Math.floor(maxCxs);
 let avgCxs= event.target.avgCx.value;
 avgCxs=parseFloat(avgCxs);
 
