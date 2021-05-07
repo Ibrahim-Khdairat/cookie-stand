@@ -145,6 +145,47 @@ function renderTableTotal() {
 }
 
 
+
+
+
+
+
+let form=document.getElementById('addCity');
+form.addEventListener("submit" , AddNewCity);
+
+function AddNewCity(event)
+{
+    event.preventDefault();
+
+let newCityName= event.target.cityName.value;
+let minCxs= event.target.minCx.value;
+minCxs=Math.floor(minCxs);
+let maxCxs= event.target.maxCx.value;
+maxCxs=Math.floor(maxCxs);
+let avgCxs= event.target.avgCx.value;
+avgCxs=parseFloat(avgCxs);
+
+
+let newCity =new City( newCityName, minCxs, maxCxs , avgCxs )
+
+table.removeChild(table.lastElementChild);
+
+newCity.randomCxnum();
+newCity.salesPerhour();
+newCity.render();
+renderTableTotal();
+
+}
+
+for (let index = 0; index < Cities.length; index++) {
+    Cities[index].randomCxnum();
+    Cities[index].salesPerhour();
+    Cities[index].render();
+    Cities[index].renderTableTotal();
+    
+}
+
+
 let Seattle = new City('Seattle', 23, 65, 6.3);
 let Tokyo = new City('Tokyo', 3, 24, 1.2);
 let Dubai = new City('Dubai', 11, 38, 3.7);
@@ -172,6 +213,7 @@ Paris.render();
 Lima.randomCxnum();
 Lima.salesPerhour();
 Lima.render();
+
 
 renderTableTotal();
 
