@@ -2,15 +2,15 @@
 
 let Cities = [];
 let workHours = ['6 Am: ', '7 Am: ', '8 Am: ', '9 Am: ', '10 Am: ', '11 Am: ', '12 Pm: ', '1 Pm: ', '2 Pm: ', '3 Pm: ', '4 Pm: ', '5 Pm: ', '6 Pm: ', '7 Pm: '];
-let totalPerhour = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-let Sum = 0;
+let totalPerhour=[0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let totalCokkie = 0;
+
+
 function City(location, min, max, avg) {
     this.location = location;
     this.min = min;
     this.max = max;
     this.avg = avg;
-    this.sumTotal = 0;
     this.cxPerhour = [];
     this.cookiesPerhour = [];
     this.total = 0;
@@ -26,7 +26,6 @@ City.prototype.randomCxnum = function (min, max) {
 
         this.cxPerhour.push(Math.floor(Math.random() * (this.max - this.min + 1) + this.min));
     }
-
 }
 
 
@@ -37,6 +36,7 @@ City.prototype.salesPerhour = function () {
         this.cookiesPerhour.push(Math.ceil(this.cxPerhour[c] * this.avg));
         this.total += this.cookiesPerhour[c];
     }
+
 }
 
 
@@ -89,19 +89,24 @@ City.prototype.render = function () {
         let td2 = document.createElement('td');
         tr2.appendChild(td2);
         td2.textContent = this.cookiesPerhour[i];
-
+       
 
 
         totalPerhour[i] += this.cookiesPerhour[i];
-        this.sumTotal += this.cookiesPerhour[i];
+
 
 
     }
+     
+  
+
+
  
 
     let thTotal = document.createElement('th');
     tr2.appendChild(thTotal);
-    thTotal.textContent = this.sumTotal;
+    thTotal.textContent = this.total;
+
 
 
 
@@ -128,13 +133,15 @@ function renderTableTotal() {
 
 
 
-    for (let i = 0; i < totalPerhour.length; i++) {
+    for (let i = 0; i < workHours.length; i++) {
         let tdTotalPerhour = document.createElement('th');
         tr1.appendChild(tdTotalPerhour);
+
         tdTotalPerhour.textContent = totalPerhour[i];
     }
+    let Sum=0;
     let thSumofTotal = document.createElement('th');
-    for (let s = 0; s < totalPerhour[s]; s++) {
+    for (let s = 0; s < workHours.length; s++) {
         Sum += totalPerhour[s];
     }
     tr1.appendChild(thSumofTotal);
@@ -178,6 +185,7 @@ renderTableTotal();
 }
 
 for (let index = 0; index < Cities.length; index++) {
+
     Cities[index].randomCxnum();
     Cities[index].salesPerhour();
     Cities[index].render();
